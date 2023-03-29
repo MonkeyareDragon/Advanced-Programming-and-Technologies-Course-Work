@@ -50,9 +50,22 @@
 		flex-direction:row;
 		justify-content:space-between;
 	}
-	i{
+	.icon i{
 		margin-top:10px;
 		margin-left: 10px;
+	}
+	button{
+		color:black;
+		background-color:white;
+		font-size:15px;
+		border-radius: 1rem;
+		width:100%;
+		padding: 10px ;
+		border:none;
+		text-align:left;
+	}
+	button i{
+		margin: 4px 10px;
 	}
 	
 </style>
@@ -83,6 +96,7 @@
 					<i class="fa-solid fa-lock"></i>
 				</div>
 			</div>
+			
 			<div>
 				<label for="confirm_password">Confirm Password: </label>
 				<div class="icon">
@@ -90,12 +104,35 @@
 					<i class="fa-solid fa-lock"></i>
 				</div>
 			</div>
+			
 			<div style='text-align:center;'>
 				<input type="submit" value="Continue" style='color:white;background-color:black;font-size:15px;border-radius: 1rem;width:100%;padding: 10px 0px;border:none'>
 			</div>
+			
 			<div style="display:flex;justify-content:space-between">
 				<hr style="width:50%; height:0.2px;"><p style="margin:0px 5px">Or</p><hr style="width:50%;  height:0.2px;">
 				
+			</div>
+			
+			<div>
+				<button>
+					<i class="fa-brands fa-google"></i>
+					Continue with Google
+				</button>
+			</div>
+			
+			<div>
+				<button>
+					<i class="fa-brands fa-apple"></i>
+					Continue with Apple
+				</button>
+			</div>
+			
+			<div>
+				<button>
+					<i class="fa-brands fa-facebook-f" style="color: #4f87e8;"></i>
+					Continue with Facebook
+				</button>
 			</div>
 		</form>
 	</div>
