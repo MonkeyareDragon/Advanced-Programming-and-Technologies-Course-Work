@@ -15,29 +15,27 @@ import databases.UserDAO;
 public class Registration extends HttpServlet{
 
 	public void service(HttpServletRequest request,HttpServletResponse response ) throws IOException, ServletException {
-		String id = request.getParameter("id");
-		String name = request.getParameter("name");
-    if(request.getParameter("password")==request.getParameter("confirm_password")){
-		  String password = request.getParameter("confirm_password");
-      System.out.println(id+" "+name+" "+gender+" "+password);
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		
-      StudentDao sdao = new StudentDao();
-      String message = sdao.registerStudent(id,name,gender,password);
-
-      response.setContentType("text/html");
-
-      PrintWriter out = response.getWriter();
-      out.println("<h1>"+message+"</h1>");
-
-
-      RequestDispatcher rd = request.getRequestDispatcher("StudentRegistration.html");
-      rd.include(request, response);	
 		
-    }
-    else{
-      
-    }
+		
+		System.out.println(email+" "+password);
+		
+		UserDAO udao = new UserDAO();
+		String message = udao.registerUser(email,password);
+		
+		response.setContentType("text/html");
+		
+		PrintWriter out = response.getWriter();
+		out.println("<h1>"+message+"</h1>");
+
+		
+		RequestDispatcher rd = request.getRequestDispatcher("Registration.html");
+		rd.include(request, response);	
+		
+
+		
 	}
 
 }
-
