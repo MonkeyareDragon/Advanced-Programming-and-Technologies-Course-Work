@@ -50,6 +50,10 @@
 		flex-direction:row;
 		justify-content:space-between;
 	}
+	i{
+		margin-top:10px;
+		margin-left: 10px;
+	}
 	
 </style>
 </head>
@@ -68,6 +72,7 @@
 				<label for="email_or_phone">Email or Phone number:</label>
 				<div class="icon">
 					<input type="text" id="email_or_phone" name="email_or_phone">
+					<i class="fa-solid fa-envelope"></i>
 				</div>
 			</div>
 			
@@ -75,16 +80,22 @@
 				<label for="password">Password: </label>
 				<div class="icon">
 					<input type="password" id="password" name="password">
+					<i class="fa-solid fa-lock"></i>
 				</div>
 			</div>
 			<div>
 				<label for="confirm_password">Confirm Password: </label>
 				<div class="icon">
 					<input type="password" id="confirm_password" name="confirm_password">
+					<i class="fa-solid fa-lock"></i>
 				</div>
 			</div>
 			<div style='text-align:center;'>
-				<input type="submit" value="Continue" style='color:white;background-color:black;font-size:15px;border-radius: 1rem;padding:10px 150px;border:none'>
+				<input type="submit" value="Continue" style='color:white;background-color:black;font-size:15px;border-radius: 1rem;width:100%;padding: 10px 0px;border:none'>
+			</div>
+			<div style="display:flex;justify-content:space-between">
+				<hr style="width:50%; height:0.2px;"><p style="margin:0px 5px">Or</p><hr style="width:50%;  height:0.2px;">
+				
 			</div>
 		</form>
 	</div>
