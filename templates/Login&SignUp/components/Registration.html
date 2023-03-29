@@ -6,11 +6,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 <style>
-	body{
-		background-color: white;
-		background-repeat:no-repeat;
-		background-size:cover;
-	}
+	
 	h1{
 		text-align:center;
 		color:black;
@@ -19,17 +15,48 @@
 		display:block;
 		width:98%;
 		border-radius: 0.5rem;
-		height:30px;
-	}
-	.main{
-	display:flex;
-	}
-	.main .login{
-		margin: auto;
+		height:40px;
+		font-size:15px;
+		padding: 3px 10px;
 	}
 	
-	a{
+	input[type=submit]{
+		color:white;
+		background-color:black;
+		font-size:15px;
+		border-radius: 1rem;
+		width:100%;
+		padding: 15px 0px;
+		border:none;
+	}
+	
+	input[type=submit]:hover{
+		background-color:white;
+		color:black;
+	}
+	.main{
+		display:flex;
+		flex-direction:column;
+		justify-content: space-between;
+	}
+	.data_entry{
+		margin: 0px 40px;
+		display: grid;
+		gap: 2rem;
+		color:white;
+	}
+	.login{
+		margin: auto;
+		text-align:center;
+	}
+	
+	.login a{
 		text-decoration:none;
+		color: red;
+		font-size:20px;
+	}
+	.login a:hover{
+		color:green;
 	}
 	.main .form{
 		padding:15px;
@@ -37,10 +64,8 @@
 		box-sizing: border-box;
 		border-radius: 0.5rem;
 		background-color:#C6BDEB;
-		display: grid;
-		gap: 1rem;
-		width: 400px;
-		color:white;
+		
+		width: 800px;
 		margin: auto;
 		
 		
@@ -60,12 +85,34 @@
 		font-size:15px;
 		border-radius: 1rem;
 		width:100%;
-		padding: 10px ;
+		padding: 20px ;
 		border:none;
 		text-align:left;
+		display:flex;
+	}
+	button:hover{
+		background-color:red;
 	}
 	button i{
-		margin: 4px 10px;
+		margin: 0px 10px;
+	}
+	.register_form{
+		margin: 0px 40px;
+	}
+	
+	.register_form h3{
+		text-align:center;
+	}
+	.continue_with{
+		display:flex;
+		flex-direction:row;
+		justify-content: space-between;
+		padding:15px;
+		
+		box-sizing: border-box;
+		border-radius: 0.5rem;
+		
+		
 	}
 	
 </style>
@@ -73,68 +120,68 @@
 <body>
 	
 	<div class='main'>
-		<div class="login">
-			<h4>Already have an account??</h4>
-			<a href="Login.jsp">Login</a>
-		</div>
-		<form action="registration" method="post" class="form">
-			<div style='text-align:center'>
-				<h1>Sign in</h1>
-			</div>
-			<div>
-				<label for="email_or_phone">Email or Phone number:</label>
-				<div class="icon">
-					<input type="text" id="email_or_phone" name="email_or_phone">
-					<i class="fa-solid fa-envelope"></i>
+		<div>
+			<form action="registration" method="post" class="form">
+				<div style='text-align:center'>
+					<h1>Sign in</h1>
 				</div>
-			</div>
-			
-			<div>
-				<label for="password">Password: </label>
-				<div class="icon">
-					<input type="password" id="password" name="password">
-					<i class="fa-solid fa-lock"></i>
-				</div>
-			</div>
-			
-			<div>
-				<label for="confirm_password">Confirm Password: </label>
-				<div class="icon">
-					<input type="password" id="confirm_password" name="confirm_password">
-					<i class="fa-solid fa-lock"></i>
-				</div>
-			</div>
-			
-			<div style='text-align:center;'>
-				<input type="submit" value="Continue" style='color:white;background-color:black;font-size:15px;border-radius: 1rem;width:100%;padding: 10px 0px;border:none'>
-			</div>
-			
-			<div style="display:flex;justify-content:space-between">
-				<hr style="width:50%; height:0.2px;"><p style="margin:0px 5px">Or</p><hr style="width:50%;  height:0.2px;">
+				<div class="data_entry register_form">
+					<div>
+						<label for="email">Email:</label>
+						<div class="icon">
+							<input type="text" id="email" name="email" placeholder="Enter your email address">
+							<i class="fa-solid fa-envelope"></i>
+						</div>
+					</div>
+					
+					<div>
+						<label for="password">Password: </label>
+						<div class="icon">
+							<input type="password" id="password" name="password" placeholder="Enter password">
+							<i class="fa-solid fa-lock"></i>
+						</div>
+					</div>
+					
+					<div style='text-align:center;'>
+						<input type="submit" value="Continue" >
+					</div>
+				</div>	
 				
-			</div>
+				<div class="register_form">
+					<h3>OR Continue with ....</h3>
+				</div>						
 			
-			<div>
-				<button>
-					<i class="fa-brands fa-google"></i>
-					Continue with Google
-				</button>
-			</div>
+				<div class="continue_with register_form">
+					<div>
+						<button>
+							<i class="fa-brands fa-google"></i>
+							Google
+						</button>
+					</div>
+					
+					<div>
+						<button>
+							<i class="fa-brands fa-apple"></i>
+							Apple
+						</button>
+					</div>
+						
+					<div>
+						<button>
+							<i class="fa-brands fa-facebook-f" style="color: #4f87e8;"></i>
+							Facebook
+						</button>
+					</div>
+				</div>
+				<div class="login register_form">
+					<h4>Already have an account?</h4>
+					<a href="Login.jsp">Login</a>
+				</div>
+			</form>
 			
-			<div>
-				<button>
-					<i class="fa-brands fa-apple"></i>
-					Continue with Apple
-				</button>
-			</div>
-			
-			<div>
-				<button>
-					<i class="fa-brands fa-facebook-f" style="color: #4f87e8;"></i>
-					Continue with Facebook
-				</button>
-			</div>
-		</form>
+		</div>
+		
 	</div>
+	
 </body>
 </html>
