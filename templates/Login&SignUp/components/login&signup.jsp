@@ -18,7 +18,7 @@
         <div class="forms-container">
           <div class="signin-signup">
             <form method="post" action="UserLogin" class="sign-in-form">
-              <h2 class="title">Sign in</h2>
+              <h2 class="title">Log in</h2>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
                 <input type="text" placeholder="Email" name="EmailLogin"/>
@@ -100,7 +100,7 @@
                 laboriosam ad deleniti.
               </p>
               <button class="btn transparent" id="sign-in-btn">
-                Sign in
+                Log in
               </button>
             </div>
             <img src="images/register.png" class="image" alt="" />
