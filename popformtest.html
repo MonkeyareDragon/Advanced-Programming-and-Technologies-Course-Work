@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Product</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  z-index: 9999;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-form.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  transform: rotate(180deg);
+}
+
+</style>
+<body>
+
+    <button id="popup-button">Open Pop-up Form</button>
+
+    <div class="popup-overlay"></div>
+    
+    <div class="popup-form">
+      <h2>Subscribe to our newsletter</h2>
+      <form>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <button class="close-button">&times;</button>
+    </div>
+    
+    
+
+
+    <script>
+const popupButton = document.getElementById('popup-button');
+const popupOverlay = document.querySelector('.popup-overlay');
+const popupForm = document.querySelector('.popup-form');
+const closeButton = document.querySelector('.close-button');
+
+popupButton.addEventListener('click', () => {
+  popupOverlay.classList.add('show');
+  popupForm.classList.add('show');
+});
+
+closeButton.addEventListener('click', () => {
+  popupOverlay.classList.remove('show');
+  popupForm.classList.remove('show');
+});
+
+popupForm.addEventListener('click', () => {
+  popupForm.classList.add('animate');
+  setTimeout(() => {
+    popupForm.classList.remove('animate');
+  }, 1000);
+});
+
+    </script>
+    
+</body>
+</html>
